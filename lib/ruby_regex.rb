@@ -1,7 +1,16 @@
 module RubyRegex
+  # URL Regex
   URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  
+  # Domain Regex
   Domain = /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?$)/ix
 
+  # MasterCard Regex
+  MasterCard = /^5[1-5]\d{14}$/
+  
+  # Visa Regex
+  Visa = /^4\d{15}$/
+  
   #
   # RFC822 Email Address Regex
   # --------------------------

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "ruby_regex"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
   s.author = "Emili Parreno"
   s.email = "emili@eparreno.com"
   s.homepage = "http://www.eparreno.com"
@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{none}
   s.test_files = ["test/ruby_regex_test.rb"]
-  s.files = ["README", "lib/ruby_regex.rb"]
+  s.files = ["CHANGELOG", "README", "lib/ruby_regex.rb"]
 end

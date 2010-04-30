@@ -1,5 +1,10 @@
+= RubyRegex
 
-RubyRegex::Url
-RubyRegex::Domain
-RubyRegex::Email
-RubyRegex::ZipCode
+Ruby regular expressions library
+
+== Methods
+
+  RubyRegex::Url
+  RubyRegex::Domain
+  RubyRegex::Email
+  RubyRegex::ZipCode

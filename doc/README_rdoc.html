@@ -76,6 +76,14 @@ Ruby regular expressions library
   RubyRegex::Email
   RubyRegex::ZipCode
 </pre>
+<h2>Rails</h2>
+<pre>
+  # config/environment.rb
+  config.gem ruby_regex
+
+  # models
+  validates_format_of :email, :with =&gt; RubyRegex::Email
+</pre>
 <hr size="1"></hr><p>
 <a href="RubyRegex.html">RubyRegex</a> is released under the MIT-License
 and is Copyright &#169;2010 Emili Parreño.

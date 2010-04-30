@@ -8,6 +8,14 @@ Ruby regular expressions library
   RubyRegex::Domain
   RubyRegex::Email
   RubyRegex::ZipCode
+
+== Rails
+
+  # config/environment.rb
+  config.gem ruby_regex
+  
+  # models
+  validates_format_of :email, :with => RubyRegex::Email
   
 ---
 

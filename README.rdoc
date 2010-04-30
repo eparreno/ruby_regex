@@ -8,3 +8,7 @@ Ruby regular expressions library
   RubyRegex::Domain
   RubyRegex::Email
   RubyRegex::ZipCode
+  
+---
+
+RubyRegex is released under the MIT-License and is Copyright (c)2010 Emili Parreño.

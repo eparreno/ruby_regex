@@ -14,6 +14,7 @@ Ruby regular expressions library
   # config/environment.rb
   config.gem ruby_regex
   
+  
   # models
   validates_format_of :email, :with => RubyRegex::Email
   

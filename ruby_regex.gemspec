@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = "0.0.3"
   s.author = "Emili Parreno"
   s.email = "emili@eparreno.com"
-  s.homepage = "http://www.eparreno.com"
+  s.homepage = "http://github.com/eparreno/ruby_regex"
   s.date = %q{2010-04-26}
   s.description = "Ruby regular expressions library"  
   s.has_rdoc = true

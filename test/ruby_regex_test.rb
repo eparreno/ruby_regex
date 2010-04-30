@@ -5,6 +5,38 @@ require 'active_support/test_case'
 require 'ruby_regex'
 
 class RubyRegexTest < ActiveSupport::TestCase
+  def test_valid_usernames
+    usernames = ['test', 'test_test', 'test1', 'test_1']
+    usernames.each do |username|
+      message = build_message(message, '<?> do not pass the test', username)
+      assert(username =~ RubyRegex::Username, username)
+    end
+  end
+  
+  def test_invalid_usernames
+    usernames = ['test-test', 'test.test', 'test/test', 'test@test']
+    usernames.each do |username|
+      message = build_message(message, '<?> do not pass the test', username)
+      assert(username !~ RubyRegex::Username, username)
+    end
+  end
+  
+  def test_valid_dnis
+    dnis = ['40990889J', '99888777h']
+    dnis.each do |dni|
+      message = build_message(message, '<?> do not pass the test', dni)
+      assert(dni =~ RubyRegex::Username, dni)
+    end
+  end
+  
+  def test_invalid_dnis
+    dnis = ['90.900.900V', '90900900-V']
+    dnis.each do |dni|
+      message = build_message(message, '<?> do not pass the test', dni)
+      assert(dni !~ RubyRegex::Username, dni)
+    end
+  end
+  
   def test_valid_emails
     emails = ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info']
     emails.each do |email|

@@ -1,10 +1,17 @@
 module RubyRegex
+  # Username
+  # This regular expression doesn't validate username's length
+  Username = /^[a-zA-Z0-9_]*$/
+  
+  # Dni (spanish ID card)
+  Dni = /^\d{8}[A-Za-z]{1}$/
+  
   # URL Regex
-  URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  Url = URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
   
   # Domain Regex
   Domain = /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?$)/ix
-
+  
   # MasterCard Regex
   MasterCard = /^5[1-5]\d{14}$/
   

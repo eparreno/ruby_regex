@@ -1,0 +1,5 @@
+
+RubyRegex::Url
+RubyRegex::Domain
+RubyRegex::Email
+RubyRegex::ZipCode

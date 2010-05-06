@@ -8,7 +8,11 @@ Ruby regular expressions library
   RubyRegex::Domain
   RubyRegex::Email
   RubyRegex::ZipCode
-
+  RubyRegex::USSocialSecurity
+  RubyRegex::GeneralPostalCode
+  RubyRegex::ZIPCode
+  RubyRegex::CreditCard
+  
 == Rails
 
   # config/environment.rb
@@ -18,6 +22,11 @@ Ruby regular expressions library
   # models
   validates_format_of :email, :with => RubyRegex::Email
   
+== Contribute
+
+Of course, contributions will be apreciated.
+If you want to contribute send me a pull request with new regular expressions (and their tests) or send me an email  with your desired regular expression to emili@eparreno.com
+
 ---
 
 RubyRegex is released under the MIT-License and is Copyright (c)2010 Emili Parreño.

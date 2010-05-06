@@ -7,11 +7,14 @@ Ruby regular expressions library
   RubyRegex::Url
   RubyRegex::Domain
   RubyRegex::Email
+  RubyRegex::Username
   RubyRegex::ZipCode
   RubyRegex::USSocialSecurity
   RubyRegex::GeneralPostalCode
   RubyRegex::ZIPCode
   RubyRegex::CreditCard
+  RubyRegex::MasterCard
+  RubyRegex::Visa
   
 == Rails
 

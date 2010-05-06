@@ -6,17 +6,32 @@ module RubyRegex
   # Dni (spanish ID card)
   Dni = /^\d{8}[A-Za-z]{1}$/
   
-  # URL Regex
+  # URL
   Url = URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
   
-  # Domain Regex
+  # Domain
   Domain = /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?$)/ix
   
-  # MasterCard Regex
+  # CreditCard
+  # Validates Credit Card numbers, Checks if it contains 16 numbers in groups of 4 separated by -, space or nothing
+  CreditCard = /^(\d{4}-){3}\d{4}$|^(\d{4}\s){3}\d{4}$|^\d{16}$/
+  
+  # MasterCard credit card
   MasterCard = /^5[1-5]\d{14}$/
   
-  # Visa Regex
+  # Visa credit card
   Visa = /^4\d{15}$/
+  
+  # US Social Security
+  USSocialSecurity = /^\d{3}-\d{2}-\d{4}$/
+  
+  # General postal code
+  # Validates a 5 digits postal code
+  GeneralPostalCode = /^\d{5}$/
+  
+  # US ZIP code
+  # Validates US ZIP Code (basic and extended format)
+  ZIPCode = /^(\d{5}$)|(\d{5}-\d{4}$)/
   
   #
   # RFC822 Email Address Regex

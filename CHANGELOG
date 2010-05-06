@@ -1,4 +1,10 @@
-30/4/2010
+6/5/2010
+-------------------------
+Add RubyRegex::USSocialSecurity
+Add RubyRegex::GeneralPostalCode
+Add RubyRegex::ZIPCode
+Add RubyRegex::CreditCard
+
 -------------------------
 Add RubyRegex::Username
 Add RubyRegex::Dni

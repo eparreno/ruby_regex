@@ -160,4 +160,21 @@ class RubyRegexTest < ActiveSupport::TestCase
       assert(zip_code !~ RubyRegex::ZIPCode, message)
     end
   end
+  
+  # Twitter usernames
+  def test_valid_twitter_usernames
+    twitter_usernames = ['ji', 'nickel84', 'sepa_rate']
+    twitter_usernames.each do |twitter_username|
+      message = build_message(message, '<?> does not pass the test', twitter_username)
+      assert(twitter_username =~ RubyRegex::TwitterUsername, message)
+    end
+  end
+  
+  def test_invalid_twitter_usernames
+    twitter_usernames = ['nickel 83', 'h.ppywebcoder']
+    twitter_usernames.each do |twitter_username|
+      message = build_message(message, '<?> does not pass the test', twitter_username)
+      assert(twitter_username !~ RubyRegex::TwitterUsername, message)
+    end
+  end  
 end

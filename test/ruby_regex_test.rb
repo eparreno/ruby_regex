@@ -177,4 +177,21 @@ class RubyRegexTest < ActiveSupport::TestCase
       assert(twitter_username !~ RubyRegex::TwitterUsername, message)
     end
   end  
+  
+  # Github usernames
+  def test_valid_github_usernames
+    github_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
+    github_usernames.each do |github_username|
+      message = build_message(message, '<?> does not pass the test', github_username)
+      assert(github_username =~ RubyRegex::GithubUsername, message)
+    end
+  end
+  
+  def test_invalid_github_usernames
+    github_usernames = ['nickel 84', 'h.ppywebcoder']
+    github_usernames.each do |github_username|
+      message = build_message(message, '<?> does not pass the test', github_username)
+      assert(github_username !~ RubyRegex::GithubUsername, message)
+    end
+  end
 end

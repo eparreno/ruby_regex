@@ -63,4 +63,7 @@ module RubyRegex
   
   # Twitter username
   TwitterUsername = /^([a-z0-9\_])+$/ix
+  
+  # Github username
+  GithubUsername = /^([a-z0-9\_\-])+$/ix
 end

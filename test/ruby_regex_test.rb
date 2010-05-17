@@ -211,4 +211,21 @@ class RubyRegexTest < ActiveSupport::TestCase
       assert(slideshare_username !~ RubyRegex::SlideshareUsername, message)
     end
   end  
+  
+  # Del.icio.us usernames
+  def test_valid_delicious_usernames
+    delicious_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
+    delicious_usernames.each do |delicious_username|
+      message = build_message(message, '<?> does not pass the test', delicious_username)
+      assert(delicious_username =~ RubyRegex::DeliciousUsername, message)
+    end
+  end
+  
+  def test_invalid_delicious_usernames
+    delicious_usernames = ['nickel 84', 'h.ppywebcoder']
+    delicious_usernames.each do |delicious_username|
+      message = build_message(message, '<?> does not pass the test', delicious_username)
+      assert(delicious_username !~ RubyRegex::DeliciousUsername, message)
+    end
+  end
 end

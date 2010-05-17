@@ -69,4 +69,7 @@ module RubyRegex
   
   # Slideshare username
   SlideshareUsername = /^([a-z0-9])+$/ix
+  
+  # Del.icio.us username
+  DeliciousUsername = /^([a-z0-9\_\-])+$/ix
 end

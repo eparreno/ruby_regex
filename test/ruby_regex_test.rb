@@ -194,4 +194,21 @@ class RubyRegexTest < ActiveSupport::TestCase
       assert(github_username !~ RubyRegex::GithubUsername, message)
     end
   end
+  
+  # Slideshare usernames
+  def test_valid_slideshare_usernames
+    slideshare_usernames = ['ji', 'nickel84']
+    slideshare_usernames.each do |slideshare_username|
+      message = build_message(message, '<?> does not pass the test', slideshare_username)
+      assert(slideshare_username =~ RubyRegex::SlideshareUsername, message)
+    end
+  end
+  
+  def test_invalid_slideshare_usernames
+    slideshare_usernames = ['nickel 84', 'h.ppywebcoder', 'sepa_rate', 'ernesto-jimenez']
+    slideshare_usernames.each do |slideshare_username|
+      message = build_message(message, '<?> does not pass the test', slideshare_username)
+      assert(slideshare_username !~ RubyRegex::SlideshareUsername, message)
+    end
+  end  
 end

@@ -4,228 +4,139 @@ require 'active_support'
 require 'active_support/test_case'
 require 'ruby_regex'
 
-class RubyRegexTest < ActiveSupport::TestCase
+class RubyRegexTest < ActiveSupport::TestCase  
+  
   #Username
   def test_valid_usernames
-    usernames = ['test', 'test_test', 'test1', 'test_1']
-    usernames.each do |username|
-      message = build_message(message, '<?> do not pass the test', username)
-      assert(username =~ RubyRegex::Username, username)
-    end
+    check_valid_regex RubyRegex::Username, ['test', 'test_test', 'test1', 'test_1']
   end
   
   def test_invalid_usernames
-    usernames = ['test-test', 'test.test', 'test/test', 'test@test']
-    usernames.each do |username|
-      message = build_message(message, '<?> do not pass the test', username)
-      assert(username !~ RubyRegex::Username, username)
-    end
+    check_invalid_regex RubyRegex::Username, ['test-test', 'test.test', 'test/test', 'test@test']
   end
   
   # DNI
   def test_valid_dnis
-    dnis = ['40990889J', '99888777h']
-    dnis.each do |dni|
-      message = build_message(message, '<?> do not pass the test', dni)
-      assert(dni =~ RubyRegex::Username, dni)
-    end
+    check_valid_regex RubyRegex::Dni, ['40990889J', '99888777h']
   end
   
   def test_invalid_dnis
-    dnis = ['90.900.900V', '90900900-V']
-    dnis.each do |dni|
-      message = build_message(message, '<?> do not pass the test', dni)
-      assert(dni !~ RubyRegex::Username, dni)
-    end
+    check_invalid_regex RubyRegex::Dni, ['90.900.900V', '90900900-V']
   end
   
   # Email
   def test_valid_emails
-    emails = ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info']
-    emails.each do |email|
-      message = build_message(message, '<?> do not pass the test', email)
-      assert(email =~ RubyRegex::Email, email)
-    end
+    check_valid_regex RubyRegex::Email, ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info']
   end
 
-  #TODO: 'test@test' is a valid domain, fix!!!
+  #TODO: 'test@test' is a valid email, fix!!!
   def test_invalid_emails
-    emails = ['test/test.com', 'test', 'test-test.com', 'test.test.com']
-    emails.each do |email|
-      message = build_message(message, '<?> do not pass the test', email)
-      assert(email !~ RubyRegex::Email, message)
-    end
+    check_invalid_regex RubyRegex::Email, ['test/test.com', 'test', 'test-test.com', 'test.test.com']
   end
   
   # Domains
   def test_valid_domains
-    domains = [ 'test.com', 'www.test.com', 'test.es', 'www.test.es', 'test.co.uk', 'www.test.co.uk', 'test.info', 'www.test.info', 'test.com.es', 'www.test.com.es']
-    domains.each do |domain|
-      message = build_message(message, '<?> do not pass the test', domain)
-      assert(domain =~ RubyRegex::Domain, message)
-    end
+    check_valid_regex RubyRegex::Domain, [ 'test.com', 'www.test.com', 'test.es', 'www.test.es', 'test.co.uk', 'www.test.co.uk', 'test.info', 'www.test.info', 'test.com.es', 'www.test.com.es']
   end
   
   def test_invalid_domains
-    domains = [ 'test.', 'www.test.e', 'www.test.', 'test.e', '!test.com', 'test/test.com']
-    domains.each do |domain|
-      message = build_message(message, '<?> do not pass the test', domain)
-      assert(domain !~ RubyRegex::Domain, message)
-    end
+    check_invalid_regex RubyRegex::Domain, [ 'test.', 'www.test.e', 'www.test.', 'test.e', '!test.com', 'test/test.com']
   end
   
   # Url
   def test_valid_url
-    urls = [ 'http://test.com', 'http://www.test.com', 'http://test.es/index', 'http://www.test.es/index.html', 
-      'https://test.co.uk', 'http://www.test.co.uk/index.html?id=34&name=username']
-    urls.each do |url|
-      message = build_message('<?> do not pass the test', url)
-      assert(url =~ RubyRegex::URL, message)
-    end
+    check_valid_regex RubyRegex::URL, ['http://test.com', 'http://www.test.com', 'http://test.es/index', 'http://www.test.es/index.html', 'https://test.co.uk', 'http://www.test.co.uk/index.html?id=34&name=username']
   end
   
   def test_invalid_url
-    urls = [ 'test.com', 'www.test.com', 'http://test.es-index', 'http://www.test.es?index.html']
-    urls.each do |url|
-      message = build_message(message, '<?> do not pass the test', url)
-      assert(url !~ RubyRegex::URL, message)
-    end
+    check_invalid_regex RubyRegex::URL, ['test.com', 'www.test.com', 'http://test.es-index', 'http://www.test.es?index.html']
   end
   
   # CreditCard
   def test_valid_credit_cards
-    credit_cards = [ '1234123412341234', '1234 1234 1234 1234', '1234-1234-1234-1234']
-    credit_cards.each do |credit_card|
-      message = build_message(message, '<?> do not pass the test', credit_card)
-      assert(credit_card =~ RubyRegex::CreditCard, message)
-    end
+    check_valid_regex RubyRegex::CreditCard, [ '1234123412341234', '1234 1234 1234 1234', '1234-1234-1234-1234']
   end
   
   def test_invalid_credit_cards
-    credit_cards = [ '1234_1234_1234_1234', '1234', '12341234', '123412341234', 
-      '1234  1234 1234 1234', '1234-1234 12341234', '123a-1234-1234-1234']
-    credit_cards.each do |credit_card|
-      message = build_message(message, '<?> do not pass the test', credit_card)
-      assert(credit_card !~ RubyRegex::Domain, message)
-    end
+    check_invalid_regex RubyRegex::CreditCard, ['1234_1234_1234_1234', '1234', '12341234', '123412341234', '1234  1234 1234 1234', '1234-1234 12341234', '123a-1234-1234-1234']
   end
   
   # US Social Security
   def test_valid_usss_numbers
-    usss_numbers = [ '123-12-1234']
-    usss_numbers.each do |usss_number|
-      message = build_message(message, '<?> do not pass the test', usss_number)
-      assert(usss_number =~ RubyRegex::USSocialSecurity, message)
-    end
+    check_valid_regex RubyRegex::USSocialSecurity, ['123-12-1234']
   end
   
   def test_invalid_usss_numbers
-    usss_numbers = [ '1234_1234_1234_1234', '1234', '123121234', '123_12_1234', '123 12 1234']
-    usss_numbers.each do |usss_number|
-      message = build_message(message, '<?> do not pass the test', usss_number)
-      assert(usss_number !~ RubyRegex::USSocialSecurity, message)
-    end
+    check_invalid_regex RubyRegex::USSocialSecurity, [ '1234_1234_1234_1234', '1234', '123121234', '123_12_1234', '123 12 1234']
   end
   
   # General Postal Code
   def test_valid_postal_codes
-    postal_codes = [ '12345']
-    postal_codes.each do |postal_code|
-      message = build_message(message, '<?> do not pass the test', postal_code)
-      assert(postal_code =~ RubyRegex::GeneralPostalCode, message)
-    end
+    check_valid_regex RubyRegex::GeneralPostalCode, ['12345']
   end
   
   def test_invalid_postal_codes
-    postal_codes = [ '1', '12', '123', '1234', '123456']
-    postal_codes.each do |postal_code|
-      message = build_message(message, '<?> do not pass the test', postal_code)
-      assert(postal_code !~ RubyRegex::GeneralPostalCode, message)
-    end
+    check_invalid_regex RubyRegex::GeneralPostalCode, [ '1', '12', '123', '1234', '123456']
   end
   
   # ZIP Code
   def test_valid_zip_codes
-    zip_codes = [ '12345', '12345-1234']
-    zip_codes.each do |zip_code|
-      message = build_message(message, '<?> do not pass the test', zip_code)
-      assert(zip_code =~ RubyRegex::ZIPCode, message)
-    end
+    check_valid_regex RubyRegex::ZIPCode, [ '12345', '12345-1234']
   end
   
   def test_invalid_zip_codes
-    zip_codes = [ '1', '12', '123', '1234', '123456', '12345_1234', '12345 1234', '1234-1234']
-    zip_codes.each do |zip_code|
-      message = build_message(message, '<?> do not pass the test', zip_code)
-      assert(zip_code !~ RubyRegex::ZIPCode, message)
-    end
+    check_invalid_regex RubyRegex::ZIPCode, [ '1', '12', '123', '1234', '123456', '12345_1234', '12345 1234', '1234-1234']
   end
   
   # Twitter usernames
   def test_valid_twitter_usernames
-    twitter_usernames = ['ji', 'nickel84', 'sepa_rate']
-    twitter_usernames.each do |twitter_username|
-      message = build_message(message, '<?> does not pass the test', twitter_username)
-      assert(twitter_username =~ RubyRegex::TwitterUsername, message)
-    end
+    check_valid_regex RubyRegex::TwitterUsername, ['ji', 'nickel84', 'sepa_rate']
   end
   
   def test_invalid_twitter_usernames
-    twitter_usernames = ['nickel 83', 'h.ppywebcoder']
-    twitter_usernames.each do |twitter_username|
-      message = build_message(message, '<?> does not pass the test', twitter_username)
-      assert(twitter_username !~ RubyRegex::TwitterUsername, message)
-    end
+    check_invalid_regex RubyRegex::TwitterUsername, ['nickel 83', 'h.ppywebcoder']
   end  
   
   # Github usernames
   def test_valid_github_usernames
-    github_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
-    github_usernames.each do |github_username|
-      message = build_message(message, '<?> does not pass the test', github_username)
-      assert(github_username =~ RubyRegex::GithubUsername, message)
-    end
+    check_valid_regex RubyRegex::GithubUsername, ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
   end
   
   def test_invalid_github_usernames
-    github_usernames = ['nickel 84', 'h.ppywebcoder']
-    github_usernames.each do |github_username|
-      message = build_message(message, '<?> does not pass the test', github_username)
-      assert(github_username !~ RubyRegex::GithubUsername, message)
-    end
+    check_invalid_regex RubyRegex::GithubUsername, ['nickel 84', 'h.ppywebcoder']
   end
   
   # Slideshare usernames
   def test_valid_slideshare_usernames
-    slideshare_usernames = ['ji', 'nickel84']
-    slideshare_usernames.each do |slideshare_username|
-      message = build_message(message, '<?> does not pass the test', slideshare_username)
-      assert(slideshare_username =~ RubyRegex::SlideshareUsername, message)
-    end
+    check_valid_regex RubyRegex::SlideshareUsername, ['ji', 'nickel84']
   end
   
   def test_invalid_slideshare_usernames
-    slideshare_usernames = ['nickel 84', 'h.ppywebcoder', 'sepa_rate', 'ernesto-jimenez']
-    slideshare_usernames.each do |slideshare_username|
-      message = build_message(message, '<?> does not pass the test', slideshare_username)
-      assert(slideshare_username !~ RubyRegex::SlideshareUsername, message)
-    end
+    check_invalid_regex RubyRegex::SlideshareUsername, ['nickel 84', 'h.ppywebcoder', 'sepa_rate', 'ernesto-jimenez']
   end  
   
   # Del.icio.us usernames
   def test_valid_delicious_usernames
-    delicious_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
-    delicious_usernames.each do |delicious_username|
-      message = build_message(message, '<?> does not pass the test', delicious_username)
-      assert(delicious_username =~ RubyRegex::DeliciousUsername, message)
-    end
+    check_valid_regex RubyRegex::DeliciousUsername, ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
   end
   
   def test_invalid_delicious_usernames
-    delicious_usernames = ['nickel 84', 'h.ppywebcoder']
-    delicious_usernames.each do |delicious_username|
-      message = build_message(message, '<?> does not pass the test', delicious_username)
-      assert(delicious_username !~ RubyRegex::DeliciousUsername, message)
-    end
+    check_invalid_regex RubyRegex::DeliciousUsername, ['nickel 84', 'h.ppywebcoder']
   end
+  
+  private
+  
+    def check_valid_regex(regexp, strings)
+      strings.each do |str|
+        message = build_message(message, '<?> does not pass the test', str)
+        assert(str =~ regexp, message)
+      end
+    end
+  
+    def check_invalid_regex(regexp, strings)
+      strings.each do |str|
+        message = build_message(message, '<?> does not pass the test', str)
+        assert(str !~ regexp, message)
+      end
+    end
 end

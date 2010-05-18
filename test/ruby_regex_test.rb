@@ -160,4 +160,72 @@ class RubyRegexTest < ActiveSupport::TestCase
       assert(zip_code !~ RubyRegex::ZIPCode, message)
     end
   end
+  
+  # Twitter usernames
+  def test_valid_twitter_usernames
+    twitter_usernames = ['ji', 'nickel84', 'sepa_rate']
+    twitter_usernames.each do |twitter_username|
+      message = build_message(message, '<?> does not pass the test', twitter_username)
+      assert(twitter_username =~ RubyRegex::TwitterUsername, message)
+    end
+  end
+  
+  def test_invalid_twitter_usernames
+    twitter_usernames = ['nickel 83', 'h.ppywebcoder']
+    twitter_usernames.each do |twitter_username|
+      message = build_message(message, '<?> does not pass the test', twitter_username)
+      assert(twitter_username !~ RubyRegex::TwitterUsername, message)
+    end
+  end  
+  
+  # Github usernames
+  def test_valid_github_usernames
+    github_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
+    github_usernames.each do |github_username|
+      message = build_message(message, '<?> does not pass the test', github_username)
+      assert(github_username =~ RubyRegex::GithubUsername, message)
+    end
+  end
+  
+  def test_invalid_github_usernames
+    github_usernames = ['nickel 84', 'h.ppywebcoder']
+    github_usernames.each do |github_username|
+      message = build_message(message, '<?> does not pass the test', github_username)
+      assert(github_username !~ RubyRegex::GithubUsername, message)
+    end
+  end
+  
+  # Slideshare usernames
+  def test_valid_slideshare_usernames
+    slideshare_usernames = ['ji', 'nickel84']
+    slideshare_usernames.each do |slideshare_username|
+      message = build_message(message, '<?> does not pass the test', slideshare_username)
+      assert(slideshare_username =~ RubyRegex::SlideshareUsername, message)
+    end
+  end
+  
+  def test_invalid_slideshare_usernames
+    slideshare_usernames = ['nickel 84', 'h.ppywebcoder', 'sepa_rate', 'ernesto-jimenez']
+    slideshare_usernames.each do |slideshare_username|
+      message = build_message(message, '<?> does not pass the test', slideshare_username)
+      assert(slideshare_username !~ RubyRegex::SlideshareUsername, message)
+    end
+  end  
+  
+  # Del.icio.us usernames
+  def test_valid_delicious_usernames
+    delicious_usernames = ['ji', 'nickel84', 'sepa_rate', 'ernesto-jimenez']
+    delicious_usernames.each do |delicious_username|
+      message = build_message(message, '<?> does not pass the test', delicious_username)
+      assert(delicious_username =~ RubyRegex::DeliciousUsername, message)
+    end
+  end
+  
+  def test_invalid_delicious_usernames
+    delicious_usernames = ['nickel 84', 'h.ppywebcoder']
+    delicious_usernames.each do |delicious_username|
+      message = build_message(message, '<?> does not pass the test', delicious_username)
+      assert(delicious_username !~ RubyRegex::DeliciousUsername, message)
+    end
+  end
 end

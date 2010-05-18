@@ -60,4 +60,16 @@ module RubyRegex
     addr_spec = "#{local_part}\\x40#{domain}"
     pattern = /\A#{addr_spec}\z/
   end
+  
+  # Twitter username
+  TwitterUsername = /^([a-z0-9\_])+$/ix
+  
+  # Github username
+  GithubUsername = /^([a-z0-9\_\-])+$/ix
+  
+  # Slideshare username
+  SlideshareUsername = /^([a-z0-9])+$/ix
+  
+  # Del.icio.us username
+  DeliciousUsername = /^([a-z0-9\_\-])+$/ix
 end

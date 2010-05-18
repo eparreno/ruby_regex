@@ -26,21 +26,21 @@ class RubyRegexTest < ActiveSupport::TestCase
   
   # Email
   def test_valid_emails
-    check_valid_regex RubyRegex::Email, ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info']
+    check_valid_regex RubyRegex::Email, ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info', 'TEST@TEST.COM', 'test_test@test.com', 'test-test@test-test.com', 'test.test@test.test.com']
   end
 
   #TODO: 'test@test' is a valid email, fix!!!
   def test_invalid_emails
-    check_invalid_regex RubyRegex::Email, ['test/test.com', 'test', 'test-test.com', 'test.test.com']
+    check_invalid_regex RubyRegex::Email, ['test/test.com', 'test', 'test-test.com', 'test.test.com', 'test@test', 'test.com',  '@test.com', 'test @ test.com', 'test@test_test.com']
   end
   
   # Domains
   def test_valid_domains
-    check_valid_regex RubyRegex::Domain, [ 'test.com', 'www.test.com', 'test.es', 'www.test.es', 'test.co.uk', 'www.test.co.uk', 'test.info', 'www.test.info', 'test.com.es', 'www.test.com.es']
+    check_valid_regex RubyRegex::Domain, ['test.com', 'www.test.com', 'test.es', 'www.test.es', 'test.co.uk', 'www.test.co.uk', 'test.info', 'www.test.info', 'test.com.es', 'www.test.com.es', 'test-test.com']
   end
   
   def test_invalid_domains
-    check_invalid_regex RubyRegex::Domain, [ 'test.', 'www.test.e', 'www.test.', 'test.e', '!test.com', 'test/test.com']
+    check_invalid_regex RubyRegex::Domain, ['test.', 'www.test.e', 'www.test.', 'test.e', '!test.com', 'test/test.com', 'test_test.com']
   end
   
   # Url

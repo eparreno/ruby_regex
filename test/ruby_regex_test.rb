@@ -29,7 +29,6 @@ class RubyRegexTest < ActiveSupport::TestCase
     check_valid_regex RubyRegex::Email, ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info', 'TEST@TEST.COM', 'test_test@test.com', 'test-test@test-test.com', 'test.test@test.test.com']
   end
 
-  #TODO: 'test@test' is a valid email, fix!!!
   def test_invalid_emails
     check_invalid_regex RubyRegex::Email, ['test/test.com', 'test', 'test-test.com', 'test.test.com', 'test@test', 'test.com',  '@test.com', 'test @ test.com', 'test@test_test.com']
   end

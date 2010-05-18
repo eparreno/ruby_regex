@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "ruby_regex"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.author = "Emili Parreno"
   s.email = "emili@eparreno.com"
   s.homepage = "http://github.com/eparreno/ruby_regex"
-  s.date = %q{2010-05-6}
+  s.date = %q{2010-05-18}
   s.description = "Ruby regular expressions library"  
   s.has_rdoc = true
   s.rdoc_options = ["--main", "README"]

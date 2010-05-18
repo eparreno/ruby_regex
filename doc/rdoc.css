@@ -1,9 +1,9 @@
 /*
  * "Darkfish" Rdoc CSS
  * $Id: rdoc.css 54 2009-01-27 01:09:48Z deveiant $
- * 
+ *
  * Author: Michael Granger <ged@FaerieMUD.org>
- * 
+ *
  */
 
 /* Base Green is: #6C8C22 */
@@ -11,7 +11,7 @@
 *{ padding: 0; margin: 0; }
 
 body {
-    background: #efefef;
+  background: #efefef;
 	font: 14px "Helvetica Neue", Helvetica, Tahoma, sans-serif;
 }
 body.class, body.module, body.file {
@@ -29,11 +29,13 @@ h1 {
 }
 h2,h3,h4 { margin-top: 1.5em; }
 
-a {
+:link,
+:visited {
 	color: #6C8C22;
 	text-decoration: none;
 }
-a:hover {
+:link:hover,
+:visited:hover {
  	border-bottom: 1px dotted #6C8C22;
 }
 
@@ -100,8 +102,8 @@ body.file p {
 	line-height: 160%;
 	list-style: none;
 }
-.indexpage ul a,
-.file #documentation ul a {
+.indexpage ul :link,
+.indexpage ul :visited {
 	font-size: 16px;
 }
 
@@ -118,6 +120,10 @@ body.file p {
 }
 .indexpage li.file {
 	background: url(images/page_white_text.png) no-repeat left 4px;
+}
+.file li p,
+.indexpage li p {
+  margin: 0 0;
 }
 
 /* @end */
@@ -170,6 +176,10 @@ body.file p {
 	-webkit-border-top-right-radius: 4px;
 	border-bottom: 1px solid #aaa;
 }
+#metadata #home-section h3.section-header {
+  border-bottom: 0;
+}
+
 #metadata ul,
 #metadata dl,
 #metadata p {
@@ -258,8 +268,12 @@ ul.link-list .type {
 	margin: 1em 0.4em;
 }
 
+#description li p {
+  margin: 0;
+}
+
 #description ul {
-	margin-left: 2em;
+	margin-left: 1.5em;
 }
 #description ul li {
 	line-height: 1.4em;
@@ -340,9 +354,6 @@ ul.link-list .type {
 #documentation .method-detail:hover {
 	background-color: #f1edba;
 }
-#documentation .method-alias {
-	font-style: oblique;
-}
 #documentation .method-heading {
 	position: relative;
 	padding: 2px 4px 0 20px;
@@ -351,7 +362,8 @@ ul.link-list .type {
 	color: #333;
 	background: url(images/brick.png) no-repeat left bottom;
 }
-#documentation .method-heading a {
+#documentation .method-heading :link,
+#documentation .method-heading :visited {
 	color: inherit;
 }
 #documentation .method-click-advice {
@@ -391,6 +403,9 @@ ul.link-list .type {
 #documentation .method-description p + p {
 	margin-bottom: 0.5em;
 }
+#documentation .method-description ul {
+  margin-left: 1.5em;
+}
 
 #documentation .attribute-method-heading {
 	background: url(images/tag_green.png) no-repeat left bottom;
@@ -413,13 +428,6 @@ ul.link-list .type {
 
 /* @group Source Code */
 
-a.source-toggle {
-	font-size: 90%;
-}
-a.source-toggle img {
-	
-}
-
 div.method-source-code {
     background: #262626;
     color: #efefef;
@@ -433,22 +441,20 @@ div.method-source-code pre {
 	background: inherit;
 	padding: 0;
 	color: white;
-	overflow: hidden;
+	overflow: auto;
 }
 
 /* @group Ruby keyword styles */
 
-.standalone-code { background: #221111; color: #ffdead; overflow: hidden; }
-
-.ruby-constant  { color: #7fffd4; background: transparent; }
-.ruby-keyword { color: #00ffff; background: transparent; }
-.ruby-ivar    { color: #eedd82; background: transparent; }
-.ruby-operator  { color: #00ffee; background: transparent; }
+.ruby-constant   { color: #7fffd4; background: transparent; }
+.ruby-keyword    { color: #00ffff; background: transparent; }
+.ruby-ivar       { color: #eedd82; background: transparent; }
+.ruby-operator   { color: #00ffee; background: transparent; }
 .ruby-identifier { color: #ffdead; background: transparent; }
-.ruby-node    { color: #ffa07a; background: transparent; }
-.ruby-comment { color: #b22222; font-weight: bold; background: transparent; }
-.ruby-regexp  { color: #ffa07a; background: transparent; }
-.ruby-value   { color: #7fffd4; background: transparent; }
+.ruby-node       { color: #ffa07a; background: transparent; }
+.ruby-comment    { color: #b22222; font-weight: bold; background: transparent; }
+.ruby-regexp     { color: #ffa07a; background: transparent; }
+.ruby-value      { color: #7fffd4; background: transparent; }
 
 /* @end */
 /* @end */
@@ -524,11 +530,14 @@ div.method-source-code pre {
 	color:#666666;
 }
 
-#TB_window a:link {color: #666666;}
-#TB_window a:visited {color: #666666;}
-#TB_window a:hover {color: #000;}
-#TB_window a:active {color: #666666;}
-#TB_window a:focus{color: #666666;}
+#TB_window :link,
+#TB_window :visited        { color: #666666; }
+#TB_window :link:hover,
+#TB_window :visited:hover  { color: #000;    }
+#TB_window :link:active,
+#TB_window :visited:active { color: #666666; }
+#TB_window :link:focus,
+#TB_window :visited:focus  { color: #666666; }
 
 #TB_overlay {
 	position: fixed;
@@ -609,7 +618,8 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
 	color: #dedede;
 	height:40px;
 }
-#TB_title a {
+#TB_title :link,
+#TB_title :visited {
 	color: white !important;
 	border-bottom: 1px dotted #dedede;
 }

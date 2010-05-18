@@ -1,3 +1,10 @@
+18/5/2010
+-------------------------
+Add RubyRegex::TwitterUsername
+Add RubyRegex::DeliciousUsername
+Add RubyRegex::SlidesahreUsername
+Add RubyRegex::GithubUsername
+
 6/5/2010
 -------------------------
 Add RubyRegex::USSocialSecurity

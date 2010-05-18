@@ -33,9 +33,19 @@ module RubyRegex
   # Validates US ZIP Code (basic and extended format)
   ZIPCode = /^(\d{5}$)|(\d{5}-\d{4}$)/
   
-  #
+  # Twitter username
+  TwitterUsername = /^([a-z0-9\_])+$/ix
+  
+  # Github username
+  GithubUsername = /^([a-z0-9\_\-])+$/ix
+  
+  # Slideshare username
+  SlideshareUsername = /^([a-z0-9])+$/ix
+  
+  # Del.icio.us username
+  DeliciousUsername = /^([a-z0-9\_\-])+$/ix
+  
   # RFC822 Email Address Regex
-  # --------------------------
   # 
   # Originally written by Cal Henderson
   # c.f. http://iamcal.com/publish/articles/php/parsing_email/
@@ -60,16 +70,4 @@ module RubyRegex
     addr_spec = "#{local_part}\\x40#{domain}"
     pattern = /\A#{addr_spec}\z/
   end
-  
-  # Twitter username
-  TwitterUsername = /^([a-z0-9\_])+$/ix
-  
-  # Github username
-  GithubUsername = /^([a-z0-9\_\-])+$/ix
-  
-  # Slideshare username
-  SlideshareUsername = /^([a-z0-9])+$/ix
-  
-  # Del.icio.us username
-  DeliciousUsername = /^([a-z0-9\_\-])+$/ix
 end

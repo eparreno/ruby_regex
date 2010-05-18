@@ -8,7 +8,6 @@ Ruby regular expressions library
   RubyRegex::Domain
   RubyRegex::Email
   RubyRegex::Username
-  RubyRegex::ZipCode
   RubyRegex::USSocialSecurity
   RubyRegex::GeneralPostalCode
   RubyRegex::ZIPCode

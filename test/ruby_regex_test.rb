@@ -26,11 +26,11 @@ class RubyRegexTest < ActiveSupport::TestCase
   
   # Email
   def test_valid_emails
-    check_valid_regex RubyRegex::Email, ['test@test.com', 'test@test.co.uk', 'test@test.es', 'test@test.info', 'TEST@TEST.COM', 'test_test@test.com', 'test-test@test-test.com', 'test.test@test.test.com']
+    check_valid_regex RubyRegex::Email, load_fixture('emails')['valid']
   end
 
   def test_invalid_emails
-    check_invalid_regex RubyRegex::Email, ['test/test.com', 'test', 'test-test.com', 'test.test.com', 'test@test', 'test.com',  '@test.com', 'test @ test.com', 'test@test_test.com']
+    check_invalid_regex RubyRegex::Email, load_fixture('emails')["invalid"]
   end
   
   # Domains
@@ -124,6 +124,9 @@ class RubyRegexTest < ActiveSupport::TestCase
   end
   
   private
+    def load_fixture( name )
+      YAML.load( File.read( File.join( File.dirname(__FILE__), 'fixtures', "#{name}.yml" ) ) )
+    end
   
     def check_valid_regex(regexp, strings)
       strings.each do |str|

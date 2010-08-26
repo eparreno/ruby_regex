@@ -38,6 +38,7 @@ If you want to contribute send me a pull request with new regular expressions (a
 
 - Lleïr Borràs
 - Jaime Iniesta
+- Fernando Guillen
 
 ---
 

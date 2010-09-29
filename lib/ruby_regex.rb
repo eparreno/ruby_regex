@@ -46,5 +46,7 @@ module RubyRegex
   DeliciousUsername = /^([a-z0-9\_\-])+$/ix
   
   # Email
-  Email = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  # From the email regex research: http://fightingforalostcause.net/misc/2006/compare-email-regex.php
+  # Authors: James Watts and Francisco Jose Martin Moreno
+  Email = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i
 end

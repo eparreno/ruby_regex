@@ -50,7 +50,7 @@ module RubyRegex
   # Authors: James Watts and Francisco Jose Martin Moreno
   Email = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i
   
-  #Email by comma
+  #Emails comma separated
   
   CommaEmail = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
 end

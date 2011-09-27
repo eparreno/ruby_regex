@@ -18,6 +18,7 @@ RubyRegex is a nice collection of regular expressions in Ruby
   RubyRegex::DeliciousUsername
   RubyRegex::SlidesahreUsername
   RubyRegex::GithubUsername
+  RubyRegex::UUID
   
 == Rails
 
@@ -39,6 +40,7 @@ If you want to contribute send me a pull request with new regular expressions (a
 - Lleïr Borràs
 - Jaime Iniesta
 - Fernando Guillen
+- Christopher Klapp
 
 ---
 

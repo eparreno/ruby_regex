@@ -123,6 +123,14 @@ class RubyRegexTest < ActiveSupport::TestCase
     check_invalid_regex RubyRegex::DeliciousUsername, ['nickel 84', 'h.ppywebcoder']
   end
   
+  def test_valid_uuids
+    check_valid_regex RubyRegex::UUID, ['550e8400e29b41d4a716446655440000', '550e8400-e29b-41d4-a716-446655440000', '6ba7b8109dad11d180b400c04fd430c8', '6ba7b810-9dad-11d1-80b4-00c04fd430c8']
+  end
+  
+  def test_invalid_uuids
+    check_invalid_regex RubyRegex::UUID, ['6ba7b810-9dad-11d180b400c04fd430c8', 'zba7b810-9dad-11d1-80b4-00c04fd430c8', '6ba7b81-9ad-1d1-0b4-00c04fd430c8', '1234', 'asdf', '555-555-5555', 'abcd@qwerty.com']
+  end
+  
   private
     def load_fixture( name )
       YAML.load( File.read( File.join( File.dirname(__FILE__), 'fixtures', "#{name}.yml" ) ) )

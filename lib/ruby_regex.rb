@@ -49,4 +49,8 @@ module RubyRegex
   # From the email regex research: http://fightingforalostcause.net/misc/2006/compare-email-regex.php
   # Authors: James Watts and Francisco Jose Martin Moreno
   Email = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i
+  
+  # UUID
+  # Validates a UUID as defined: http://en.wikipedia.org/wiki/Universally_unique_identifier
+  UUID = /^(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})$/
 end

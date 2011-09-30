@@ -1,56 +1,56 @@
 module RubyRegex
   # Username
   # This regular expression doesn't validate username's length
-  Username = /^[a-zA-Z0-9_]*$/
-  
+  Username = /\A[a-zA-Z0-9_]*\z/
+
   # Dni (spanish ID card)
-  Dni = /^\d{8}[A-Za-z]{1}$/
-  
+  Dni = /\A\d{8}[A-Za-z]{1}\z/
+
   # URL
-  Url = URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
-  
+  Url = URL = /(\A\z)|(\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?\z)/ix
+
   # Domain
-  Domain = /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?$)/ix
-  
+  Domain = /(\A\z)|(\A[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?\z)/ix
+
   # CreditCard
   # Validates Credit Card numbers, Checks if it contains 16 numbers in groups of 4 separated by -, space or nothing
-  CreditCard = /^(\d{4}-){3}\d{4}$|^(\d{4}\s){3}\d{4}$|^\d{16}$/
-  
+  CreditCard = /\A(\d{4}-){3}\d{4}\z|\A(\d{4}\s){3}\d{4}\z|\A\d{16}\z/
+
   # MasterCard credit card
-  MasterCard = /^5[1-5]\d{14}$/
-  
+  MasterCard = /\A5[1-5]\d{14}\z/
+
   # Visa credit card
-  Visa = /^4\d{15}$/
-  
+  Visa = /\A4\d{15}\z/
+
   # US Social Security
-  USSocialSecurity = /^\d{3}-\d{2}-\d{4}$/
-  
+  USSocialSecurity = /\A\d{3}-\d{2}-\d{4}\z/
+
   # General postal code
   # Validates a 5 digits postal code
-  GeneralPostalCode = /^\d{5}$/
-  
+  GeneralPostalCode = /\A\d{5}\z/
+
   # US ZIP code
   # Validates US ZIP Code (basic and extended format)
-  ZIPCode = /^(\d{5}$)|(\d{5}-\d{4}$)/
-  
+  ZIPCode = /\A(\d{5}\z)|(\d{5}-\d{4}\z)/
+
   # Twitter username
-  TwitterUsername = /^([a-z0-9\_])+$/ix
-  
+  TwitterUsername = /\A([a-z0-9\_])+\z/ix
+
   # Github username
-  GithubUsername = /^([a-z0-9\_\-])+$/ix
-  
+  GithubUsername = /\A([a-z0-9\_\-])+\z/ix
+
   # Slideshare username
-  SlideshareUsername = /^([a-z0-9])+$/ix
-  
+  SlideshareUsername = /\A([a-z0-9])+\z/ix
+
   # Del.icio.us username
-  DeliciousUsername = /^([a-z0-9\_\-])+$/ix
-  
+  DeliciousUsername = /\A([a-z0-9\_\-])+\z/ix
+
   # Email
   # From the email regex research: http://fightingforalostcause.net/misc/2006/compare-email-regex.php
   # Authors: James Watts and Francisco Jose Martin Moreno
-  Email = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i
-  
+  Email = /\A([\w\!\#\z\%\&\'\*\+\-\/\=\?\\A\`{\|\}\~]+\.)*[\w-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)\z/i
+
   # UUID
   # Validates a UUID as defined: http://en.wikipedia.org/wiki/Universally_unique_identifier
-  UUID = /^(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})$/
+  UUID = /\A(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})\z/
 end

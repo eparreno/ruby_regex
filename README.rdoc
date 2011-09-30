@@ -41,6 +41,7 @@ If you want to contribute send me a pull request with new regular expressions (a
 - Jaime Iniesta
 - Fernando Guillen
 - Christopher Klapp
+- Guillermo Alvarez
 
 ---
 

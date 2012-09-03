@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email = "emili@eparreno.com"
   s.homepage = "http://github.com/eparreno/ruby_regex"
   s.date = %q{2011-09-30}
-  s.description = "Ruby regular expressions library"  
+  s.description = "Ruby regular expressions library"
   s.has_rdoc = true
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]

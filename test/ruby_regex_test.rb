@@ -131,6 +131,24 @@ class RubyRegexTest < ActiveSupport::TestCase
     check_invalid_regex RubyRegex::UUID, ['6ba7b810-9dad-11d180b400c04fd430c8', 'zba7b810-9dad-11d1-80b4-00c04fd430c8', '6ba7b81-9ad-1d1-0b4-00c04fd430c8', '1234', 'asdf', '555-555-5555', 'abcd@qwerty.com']
   end
 
+  # DBDate
+  def test_valid_db_dates
+    check_valid_regex RubyRegex::DBDate, load_fixture('db_dates')['valid']
+  end
+
+  def test_invalid_db_dates
+    check_invalid_regex RubyRegex::DBDate, load_fixture('db_dates')['invalid']
+  end
+
+  # DBDateTime
+  def test_valid_db_date_times
+    check_valid_regex RubyRegex::DBDateTime, load_fixture('db_date_times')['valid']
+  end
+
+  def test_invalid_db_date_times
+    check_invalid_regex RubyRegex::DBDateTime, load_fixture('db_date_times')['invalid']
+  end
+
   private
     def load_fixture( name )
       YAML.load( File.read( File.join( File.dirname(__FILE__), 'fixtures', "#{name}.yml" ) ) )

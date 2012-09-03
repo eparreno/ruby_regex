@@ -52,5 +52,5 @@ module RubyRegex
 
   # UUID
   # Validates a UUID as defined: http://en.wikipedia.org/wiki/Universally_unique_identifier
-  UUID = /\A(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})\z/
+  UUID = /\A([0-9a-fA-F]{32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\z/
 end

@@ -1,10 +1,8 @@
 require 'test/unit'
-require 'rubygems'
-require 'active_support'
-require 'active_support/test_case'
+require 'yaml'
 require File.join( File.dirname(__FILE__), '../lib/ruby_regex' )
 
-class RubyRegexTest < ActiveSupport::TestCase
+class RubyRegexTest < Test::Unit::TestCase
 
   #Username
   def test_valid_usernames

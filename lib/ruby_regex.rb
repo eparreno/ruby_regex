@@ -60,4 +60,7 @@ module RubyRegex
 
   # Date Time DB format YYYY-MM-DD hh:mm:ss
   DBDateTime = /\A\d{4}-(#{("01".."12").to_a.join("|")})-(#{("01".."31").to_a.join("|")})\s(#{("00".."23").to_a.join("|")}):(#{("00".."59").to_a.join("|")}):(#{("00".."59").to_a.join("|")})\z/
+
+  # SpanishBankAccountNumber
+  SpanishBankAccountNumber = /\A\d{4}[ -]?\d{4}[ -]?\d{2}[ -]?\d{10}\z/
 end

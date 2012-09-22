@@ -147,6 +147,15 @@ class RubyRegexTest < Test::Unit::TestCase
     check_invalid_regex RubyRegex::DBDateTime, load_fixture('db_date_times')['invalid']
   end
 
+  # SpanishBankAccountNumber
+  def test_valid_spanish_bank_account_numbers
+    check_valid_regex RubyRegex::SpanishBankAccountNumber, load_fixture('spanish_bank_account_numbers')['valid']
+  end
+
+  def test_invalid_spanish_bank_account_numbers
+    check_invalid_regex RubyRegex::SpanishBankAccountNumber, load_fixture('spanish_bank_account_numbers')['invalid']
+  end
+
   private
     def load_fixture( name )
       YAML.load( File.read( File.join( File.dirname(__FILE__), 'fixtures', "#{name}.yml" ) ) )
@@ -154,14 +163,14 @@ class RubyRegexTest < Test::Unit::TestCase
 
     def check_valid_regex(regexp, strings)
       strings.each do |str|
-        message = build_message(message, '<?> does not pass the test', str)
+        message = build_message(message, '<?> should be valid but it is not', str)
         assert(str =~ regexp, message)
       end
     end
 
     def check_invalid_regex(regexp, strings)
       strings.each do |str|
-        message = build_message(message, '<?> does not pass the test', str)
+        message = build_message(message, '<?> should be invalid but it is not', str)
         assert(str !~ regexp, message)
       end
     end

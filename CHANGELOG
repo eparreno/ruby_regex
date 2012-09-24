@@ -1,6 +1,12 @@
+24/09/2012
+-------------------------
+Add DBDate regexp
+Add DBDateTime regexp
+Add SpanishBankAccountNumber regexp
+
 30/09/2011
 -------------------------
-Regular expressions match with \A and \z (string delimiters) 
+Regular expressions match with \A and \z (string delimiters)
 instead of ^ and $ (line delimiters)
 
 27/09/2011

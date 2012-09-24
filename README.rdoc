@@ -19,16 +19,20 @@ RubyRegex is a nice collection of regular expressions in Ruby
   RubyRegex::SlidesahreUsername
   RubyRegex::GithubUsername
   RubyRegex::UUID
-  
+  RubyRegex::DBDate
+  RubyRegex::DBDatetime
+  RubyRegex::SpanishBankAccountNumber
+
 == Rails
 
-  # config/environment.rb
-  config.gem ruby_regex
-  
-  
-  # models
-  validates_format_of :email, :with => RubyRegex::Email
-  
+  Add to your Gemfile
+
+    gem 'ruby_regex'
+
+  In the models
+
+    validates_format_of :email, :with => RubyRegex::Email
+
 == Contribute
 
 Of course, contributions will be apreciated.

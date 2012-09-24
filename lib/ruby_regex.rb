@@ -52,5 +52,15 @@ module RubyRegex
 
   # UUID
   # Validates a UUID as defined: http://en.wikipedia.org/wiki/Universally_unique_identifier
-  UUID = /\A(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})\z/
+  UUID = /\A([0-9a-fA-F]{32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\z/
+
+  # Date DB format YYYY-MM-DD
+  # I know it will validate 2001-02-31 but is I think we are focusing in formats more than in parsing
+  DBDate = /\A\d{4}-(#{("01".."12").to_a.join("|")})-(#{("01".."31").to_a.join("|")})\z/
+
+  # Date Time DB format YYYY-MM-DD hh:mm:ss
+  DBDateTime = /\A\d{4}-(#{("01".."12").to_a.join("|")})-(#{("01".."31").to_a.join("|")})\s(#{("00".."23").to_a.join("|")}):(#{("00".."59").to_a.join("|")}):(#{("00".."59").to_a.join("|")})\z/
+
+  # SpanishBankAccountNumber
+  SpanishBankAccountNumber = /\A\d{4}[ -]?\d{4}[ -]?\d{2}[ -]?\d{10}\z/
 end

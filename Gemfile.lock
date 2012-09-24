@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    ruby_regex (0.0.9)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ruby_regex!

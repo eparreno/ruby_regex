@@ -156,6 +156,15 @@ class RubyRegexTest < Test::Unit::TestCase
     check_invalid_regex RubyRegex::SpanishBankAccountNumber, load_fixture('spanish_bank_account_numbers')['invalid']
   end
 
+  # MacAddress
+  def test_valid_mac_addresses
+    check_valid_regex RubyRegex::MacAddress, load_fixture('mac_addresses')['valid']
+  end
+
+  def test_invalid_mac_addresses
+    check_invalid_regex RubyRegex::SpanishBankAccountNumber, load_fixture('mac_addresses')['invalid']
+  end
+
   private
     def load_fixture( name )
       YAML.load( File.read( File.join( File.dirname(__FILE__), 'fixtures', "#{name}.yml" ) ) )

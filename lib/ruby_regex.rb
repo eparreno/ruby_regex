@@ -63,4 +63,7 @@ module RubyRegex
 
   # SpanishBankAccountNumber
   SpanishBankAccountNumber = /\A\d{4}[ -]?\d{4}[ -]?\d{2}[ -]?\d{10}\z/
+
+  # MacAddress
+  MacAddress = /\A([0-9A-F]{2}[:-]){5}([0-9A-F]{2})\z/i
 end

@@ -1,11 +1,13 @@
 PATH
   remote: .
   specs:
-    ruby_regex (0.0.9)
+    ruby_regex (0.1.0)
+      rake
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
+    rake (10.1.0)
 
 PLATFORMS
   ruby

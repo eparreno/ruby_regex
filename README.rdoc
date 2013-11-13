@@ -39,14 +39,6 @@ Of course, contributions will be apreciated.
 
 If you want to contribute send me a pull request with new regular expressions (and their tests) or send me an email  with your desired regular expression to emili@eparreno.com
 
-== Contributors
-
-- Lleïr Borràs
-- Jaime Iniesta
-- Fernando Guillen
-- Christopher Klapp
-- Guillermo Alvarez
-
 ---
 
 RubyRegex is released under the MIT-License and is Copyright (c)2010 Emili Parreño.

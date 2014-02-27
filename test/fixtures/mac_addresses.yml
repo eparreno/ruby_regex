@@ -1,0 +1,8 @@
+valid:
+  - "aa:aa:aa:aa:aa:aa"
+  - "FF:FF:FF:FF:FF:FF"
+
+invalid:
+  - "Not valid"
+  - "FF,FF,FF,FF,FF,FF"
+  - "FF:FF:FF:FF:FF"

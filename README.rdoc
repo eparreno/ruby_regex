@@ -22,6 +22,7 @@ RubyRegex is a nice collection of regular expressions in Ruby
   RubyRegex::DBDate
   RubyRegex::DBDatetime
   RubyRegex::SpanishBankAccountNumber
+  RubyRegex::Dni
 
 == Rails
 

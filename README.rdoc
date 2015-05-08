@@ -16,7 +16,7 @@ RubyRegex is a nice collection of regular expressions in Ruby
   RubyRegex::Visa
   RubyRegex::TwitterUsername
   RubyRegex::DeliciousUsername
-  RubyRegex::SlidesahreUsername
+  RubyRegex::SlideshareUsername
   RubyRegex::GithubUsername
   RubyRegex::UUID
   RubyRegex::DBDate

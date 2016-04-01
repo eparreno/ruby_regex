@@ -63,4 +63,12 @@ module RubyRegex
 
   # SpanishBankAccountNumber
   SpanishBankAccountNumber = /\A\d{4}[ -]?\d{4}[ -]?\d{2}[ -]?\d{10}\z/
+
+  # IBAN
+  # Source: http://snipplr.com/view/15322/iban-regex-all-ibans/
+  # You have to remove spaces or any separator character from the original field before use this regex
+  IBAN = /[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/
+
+  # MacAddress
+  MacAddress = /\A([0-9A-F]{2}[:-]){5}([0-9A-F]{2})\z/i
 end

@@ -52,7 +52,7 @@ module RubyRegex
 
   # UUID
   # Validates a UUID as defined: http://en.wikipedia.org/wiki/Universally_unique_identifier
-  UUID = /\A([0-9a-fA-F]{32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\z/
+  UUID = /\A(\h{32}|\h{8}-\h{4}-\h{4}-\h{4}-\h{12})\z/
 
   # Date DB format YYYY-MM-DD
   # I know it will validate 2001-02-31 but is I think we are focusing in formats more than in parsing

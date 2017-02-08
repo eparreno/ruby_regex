@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.date = %q{2017-02-08}
   s.description = "Ruby regular expressions library"
   s.has_rdoc = true
-  s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{2.6.8}
   s.summary = %q{none}

@@ -91,7 +91,66 @@
 </nav>
 
 <main role="main">
-<p>This is the API documentation for RDoc Documentation.
+
+
+<h1 id="label-RubyRegex"><a href="RubyRegex.html">RubyRegex</a><span><a href="#label-RubyRegex">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="http://badge.fury.io/rb/ruby_regex"><img
+src="https://badge.fury.io/rb/ruby_regex.svg"></a> <a
+href="https://travis-ci.org/eparreno/ruby_regex"><img
+src="https://travis-ci.org/eparreno/ruby_regex.svg"></a> <a
+href="https://codeclimate.com/github/eparreno/ruby_regex"><img
+src="https://codeclimate.com/github/eparreno/ruby_regex/badges/gpa.svg"></a></p>
+
+<p><a href="RubyRegex.html">RubyRegex</a> is a nice collection of regular
+expressions in Ruby</p>
+
+<h2 id="label-Regular+expressions">Regular expressions<span><a href="#label-Regular+expressions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Url</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Domain</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Email</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Username</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">USSocialSecurity</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">GeneralPostalCode</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">ZIPCode</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">CreditCard</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">MasterCard</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Visa</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">TwitterUsername</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">DeliciousUsername</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">SlideshareUsername</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">GithubUsername</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">UUID</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">DBDate</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">DBDatetime</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">SpanishBankAccountNumber</span>
+<span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Dni</span>
+</pre>
+
+<h2 id="label-Rails">Rails<span><a href="#label-Rails">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add to your <a href="Gemfile.html">Gemfile</a></p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;ruby_regex&#39;</span>
+</pre>
+
+<p>In the models</p>
+
+<pre class="ruby"><span class="ruby-identifier">validates_format_of</span> :<span class="ruby-identifier">email</span>, :<span class="ruby-identifier">with</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">RubyRegex</span><span class="ruby-operator">::</span><span class="ruby-constant">Email</span>
+</pre>
+
+<h2 id="label-Contribute">Contribute<span><a href="#label-Contribute">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Of course, contributions will be apreciated.</p>
+
+<p>If you want to contribute send me a pull request with new regular
+expressions (and their tests) or send me an email with your desired regular
+expression to emili@eparreno.com</p>
+<hr>
+
+<p><a href="RubyRegex.html">RubyRegex</a> is released under the MIT-License
+and is Copyright ©2010 Emili Parreño.</p>
 </main>
 
 

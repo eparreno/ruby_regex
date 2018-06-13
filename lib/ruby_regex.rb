@@ -12,6 +12,9 @@ module RubyRegex
   # Domain
   Domain = /(\A\z)|(\A[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?)?\z)/ix
 
+  # Subdomain - https://tools.ietf.org/html/rfc3986#section-3.2.2
+  Subdomain = /(\A\z)|(\A[a-z0-9]([a-z0-9\-]{,61}[a-z0-9])?\z)/ix
+
   # CreditCard
   # Validates Credit Card numbers, Checks if it contains 16 numbers in groups of 4 separated by -, space or nothing
   CreditCard = /\A(\d{4}-){3}\d{4}\z|\A(\d{4}\s){3}\d{4}\z|\A\d{16}\z/

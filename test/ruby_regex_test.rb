@@ -40,6 +40,15 @@ class RubyRegexTest < Test::Unit::TestCase
     check_invalid_regex RubyRegex::Domain, ['test.', 'www.test.e', 'www.test.', 'test.e', '!test.com', 'test/test.com', 'test_test.com']
   end
 
+  # Subdomains
+  def test_valid_subdomains
+    check_valid_regex RubyRegex::Subdomain, ['test', 'www', 'a', 'a1', 'a-test', 'a'*63]
+  end
+
+  def test_invalid_subdomains
+    check_invalid_regex RubyRegex::Subdomain, ['-bad', 'still-bad-', 'also_bad', 'a'*64]
+  end
+
   # Url
   def test_valid_url
     check_valid_regex RubyRegex::URL, ['http://test.com', 'http://www.test.com', 'http://test.es/index', 'http://www.test.es/index.html', 'https://test.co.uk', 'http://www.test.co.uk/index.html?id=34&name=username']

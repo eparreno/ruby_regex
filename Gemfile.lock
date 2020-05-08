@@ -8,7 +8,6 @@ GEM
   specs:
     power_assert (1.2.0)
     rake (13.0.1)
-    rdoc (6.2.1)
     test-unit (3.3.5)
       power_assert
 
@@ -17,7 +16,6 @@ PLATFORMS
 
 DEPENDENCIES
   rake
-  rdoc
   ruby_regex!
   test-unit
 

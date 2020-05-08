@@ -9,8 +9,6 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/eparreno/ruby_regex"
   s.date = %q{2020-05-08}
   s.description = "Ruby regular expressions library"
-  s.has_rdoc = true
-  s.rdoc_options = ["--main", "README.md"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{3.0.3}
   s.summary = %q{none}
@@ -18,5 +16,4 @@ Gem::Specification.new do |s|
   s.files = ["CHANGELOG", "README.md", "LICENSE", "lib/ruby_regex.rb"]
   s.add_development_dependency "rake"
   s.add_development_dependency "test-unit"
-  s.add_development_dependency "rdoc"
 end
